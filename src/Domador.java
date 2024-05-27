@@ -6,35 +6,33 @@ public class Domador {
     private String nombre;
     private ArrayList<Digimon> digimons = new ArrayList<Digimon>();
 
-    public Domador(String nombre, int digimon) {
+    public Domador(String nombre, Digimon digimon) {
         this.nombre = nombre;
-        switch (digimon){
-            case 1:
-                this.digimons.add(new Digimon("Agumon", (int) (random()*5)+1));
-                break;
-            case 2:
-                this.digimons.add(new Digimon("Gabumon", (int) (random()*5)+1));
-                break;
-            case 3:
-                this.digimons.add(new Digimon("Patamon", (int) (random()*5)+1));
-                break;
-                /*
-            case 4:
-                this.digimons.add(new Digimon("Piyomon", (int) (random()*5)+1));
-                break;
-            case 5:
-                this.digimons.add(new Digimon("Veedramon", (int) (random()*5)+1));
-                break;*/
+        this.digimons.add(digimon);
+    }
+
+    public String capturaDigimon(Digimon d) {
+        String captura = "";
+        if (d.captura()) {
+            digimons.add(d);
+            captura = d.getNombre() + " capturado";
+        } else {
+            captura = d.getNombre() + " no capturado";
         }
+        return captura;
     }
-    public boolean capturaDigimon(Digimon d) {
-        boolean captura = d.captura();;
-    if(captura) {
-        digimons.add(d);
-    }
-    return captura;
-    }
+
     public String getNombre() {
         return nombre;
+    }
+
+    public Digimon digimonsGet(int i) {
+        return digimons.get(i);
+    }
+
+    public void getEquipo() {
+        for (int i = 0; i < digimons.size(); i++) {
+            System.out.println(digimons.get(i).toString());
+        }
     }
 }
