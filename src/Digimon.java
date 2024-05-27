@@ -65,13 +65,22 @@ public class Digimon {
 
     public int ataqueC(){
         int daño = this.ataque;
-
+        dp1--;
         return daño;
     }
 
     public int ataqueP(){
-        int daño = this.ataque;
-
+        int daño = this.ataque+2;
+        dp2-=1;
         return daño;
+    }
+
+    public boolean captura(){
+        if(this.vida <= 20){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
