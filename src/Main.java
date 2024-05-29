@@ -5,6 +5,7 @@ import static java.lang.Math.random;
 /**
  * Clase principal donde se ejecuta la batalla digital y el domador <p>
  * Se tiene un metodo donde se sacan los digimons randoms <p>
+ *
  * @author Victor
  */
 public class Main {
@@ -12,8 +13,8 @@ public class Main {
 
     /**
      * Metodo principal donde se ejecuta la batalla digital
+     *
      * @param args
-     * @author Victor
      */
     public static void main(String[] args) {
 
@@ -38,7 +39,7 @@ public class Main {
             if (batallaDigital.ganador()) {
                 System.out.println(domador.getNombre() + " ha ganado");
             }
-        }catch (hasPerdido e){
+        } catch (hasPerdido e) {
             System.out.println(e.getMessage());
             System.out.println("Vuelve a intentarlo");
         }
@@ -47,8 +48,8 @@ public class Main {
     /**
      * <p>Metodo que saca un digimon random atraves de un math random y un switch</p>
      * <p>Se ha cambiado el nivel alatorio del 1 al 5 a de 5 al 10</p>
+     *
      * @return da un digimon random entre Agumon, Gabumon y Patamon que esta entre nivel 5 al 10
-     * @author Victor
      */
     public static Digimon digimonRanmdom() {
         int num = (int) (random() * 3) + 1;
